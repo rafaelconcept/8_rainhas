@@ -1,0 +1,77 @@
+
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="functions.js"></script>
+
+  </head>
+  
+  <body>
+    <h2>Problema 8 rainhas</h2>
+    <h4>Desenvolvido por Rafael Silva Brito</h4>
+  <div id="tabuleiro">
+   
+    <script>
+      
+      //Organizando o tabuleiro
+
+      for(i=0;i<8;i++){
+        for(j=0;j<8;j++){
+          if(i%2!=0){
+            if(j%2==0){
+              document.getElementById('tabuleiro').insertAdjacentHTML("beforeend","<div class='casa preto'></div>");          
+            }else{
+              document.getElementById('tabuleiro').insertAdjacentHTML("beforeend","<div class='casa branco'></div>");          
+            }
+          }else{
+            if(j%2==0){
+              document.getElementById('tabuleiro').insertAdjacentHTML("beforeend","<div class='casa branco'></div>");          
+            }else{
+              document.getElementById('tabuleiro').insertAdjacentHTML("beforeend","<div class='casa preto'></div>");          
+            }
+          }
+      }
+    }
+
+
+   //Adicionando a logica
+
+    var linhas = 8; 
+    var colunas = 8; 
+    var matriz = new Array(colunas); 
+    for (var i = 0; i < colunas; i++) 
+    matriz[i] = new Array(linhas);
+
+    for(i=0;i<linhas;i++){
+      for(j=0;j<colunas;j++){
+        matriz[i][j] = 0
+      }
+    }
+
+
+    var nova_matriz = encontrar(matriz, 0, 0)
+    var rainha_preta="<img class='rainha' src='https://cdn.pixabay.com/photo/2018/05/19/12/50/chess-3413427_960_720.png'>"
+    var rainha_branca= "<img class='rainha' src='https://cdn.pixabay.com/photo/2018/05/19/12/50/chess-3413424_960_720.png'>"
+    //console.log(matriz)
+  
+    for(i=0;i<linhas;i++){
+      for(j=0;j<colunas;j++){
+        if(nova_matriz[i][j]==1){
+          var posicao = 8*i+j+1
+          //console.log(posicao)
+          if(document.querySelectorAll('.casa')[posicao-1].classList[1]=='branco'){
+            document.querySelectorAll('.casa')[posicao-1].insertAdjacentHTML("beforeend",rainha_preta);
+          }else{
+            document.querySelectorAll('.casa')[posicao-1].insertAdjacentHTML("beforeend",rainha_branca);
+          }
+         
+        }
+      }
+    }
+
+
+
+    </script>
+    
+  </div>
+  
+</body>

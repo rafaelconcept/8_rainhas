@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+
+  h2{
+    margin-bottom: 0px;
+  }
+  h4{
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  
+  #tabuleiro {
+      display: flex;
+        width: 280px;
+        flex-wrap: wrap;
+        border: 1px solid black;
+      
+  }
+
+  .casa {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+  }
+  .branco {
+    background-color: white;
+  }
+  .preto {
+    background-color: black;
+    color: white;
+  }
+  
+  .rainha {
+      height: 35px;
+  }
